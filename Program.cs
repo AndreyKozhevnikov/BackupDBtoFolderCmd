@@ -10,6 +10,13 @@ namespace BackupDBtoFolderCmd {
     class Program {
         
         static void Main(string[] args) {
+            if(args.Count() != 2) {
+                Console.WriteLine("Wrong arguments");
+                Console.WriteLine("Count: "+args.Count());
+                Console.WriteLine(string.Join("\r\n", args));
+                Console.Read();
+                return;
+            }
             string sConn = string.Format(@"Data Source={0};Integrated Security=True", @"(localdb)\mssqllocaldb");
             SqlConnection connSql = new SqlConnection(sConn);
             connSql.Open();
