@@ -28,6 +28,7 @@ namespace BackupDBtoFolderCmd {
             commSql.CommandText = sqlQuery;
             commSql.ExecuteNonQuery();
             connSql.Close();
+            Console.WriteLine("{0} backup created", backupName);
         }
     }
 }
